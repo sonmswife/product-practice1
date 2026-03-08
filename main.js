@@ -45,6 +45,20 @@ function renderBalls(numbers) {
 
 function init() {
     const btn = document.getElementById('generate-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+    });
     
     btn.addEventListener('click', () => {
         // Optional: Add a subtle vibration for mobile users
