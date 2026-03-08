@@ -24,8 +24,8 @@ A modern, web-based Lotto 6/45 generator that provides a visually appealing and 
 5.  **Deployment**: Push the changes to the remote repository.
 
 ### Steps
-- [ ] Refactor `style.css` with theme-aware variables.
-- [ ] Add theme toggle button to `index.html`.
-- [ ] Add theme switching logic to `main.js`.
-- [ ] Verify functionality in the preview.
-- [ ] Git push to deploy.
+- [x] Refactor `style.css` with theme-aware variables.
+- [x] Add theme toggle button to `index.html`.
+- [x] Add theme switching logic to `main.js`.
+- [x] Verify functionality in the preview.
+- [x] Git push to deploy.
