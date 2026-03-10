@@ -7,25 +7,27 @@ A modern, web-based Lotto 6/45 generator that provides a visually appealing and 
 - **Dynamic Lotto Number Generation**: Generates 6 random numbers between 1 and 45.
 - **Ball Animations**: Balls appear with a "pop-in" effect and specific colors based on the number range.
 - **Modern UI**: Clean layout, responsive design, and visually distinct ball styling.
-- **Theme Support**: (Planned) Dark and Light mode toggle.
+- **Theme Support**: Dark and Light mode toggle.
+- **Partnership Inquiry Form**: A simple form powered by Formspree to receive partnership inquiries.
 
 ## Technical Stack
 - HTML5
 - CSS3 (Baseline features: CSS Variables, Flexbox, Animations)
 - JavaScript (ES Modules)
+- Formspree (Form Handling)
 
-## Current Task: Theme Support (Dark/Light Mode)
+## Current Task: Partnership Inquiry Form (Completed)
 
 ### Plan
-1.  **CSS Variables Refactoring**: Update `style.css` to define both light and dark theme variable sets.
-2.  **Theme Toggle UI**: Add a theme switch button in `index.html`.
-3.  **JavaScript Logic**: Implement theme switching in `main.js` using a class on the `body` or `html` tag.
-4.  **Persistence**: Save the theme preference in `localStorage`.
-5.  **Deployment**: Push the changes to the remote repository.
+1.  **HTML Structure**: Add a `section` for the partnership form in `index.html`.
+2.  **Formspree Integration**: Use the endpoint `https://formspree.io/f/mreypqpr`.
+3.  **Modern Styling**: Apply consistent styling in `style.css` for inputs and buttons, supporting both dark and light modes.
+4.  **Validation & Feedback**: Use native HTML5 validation and Formspree's redirect/success handling.
 
 ### Steps
 - [x] Refactor `style.css` with theme-aware variables.
 - [x] Add theme toggle button to `index.html`.
 - [x] Add theme switching logic to `main.js`.
-- [x] Verify functionality in the preview.
-- [x] Git push to deploy.
+- [x] Add partnership form to `index.html`.
+- [x] Style the partnership form in `style.css`.
+- [x] Verify functionality.
