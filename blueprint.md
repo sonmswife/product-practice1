@@ -1,33 +1,19 @@
 # Lotto Generator Project Blueprint
 
 ## Project Overview
-A modern, web-based Lotto 6/45 generator that provides a visually appealing and interactive user experience. It features dynamic ball animations and a responsive design.
+A modern, web-based Lotto 6/45 number generator. It features a clean, interactive UI with dark/light mode support, a partnership inquiry form, and a community comment section.
 
-## Features
-- **Dynamic Lotto Number Generation**: Generates 6 random numbers between 1 and 45.
-- **Ball Animations**: Balls appear with a "pop-in" effect and specific colors based on the number range.
-- **Modern UI**: Clean layout, responsive design, and visually distinct ball styling.
-- **Theme Support**: Dark and Light mode toggle.
-- **Partnership Inquiry Form**: A simple form powered by Formspree to receive partnership inquiries.
+## Current Features
+- **Lotto Number Generation**: Generates 6 unique numbers (1-45) with standard Korean Lotto color coding.
+- **Theme Support**: Dark and Light modes with persistent storage.
+- **Responsive Design**: Works on mobile and desktop.
+- **Visual Effects**: Animated ball entrance and subtle background glows.
+- **AJAX Form Submission**: Partnership form with AJAX (Formspree) for zero-reload feedback.
 
-## Technical Stack
-- HTML5
-- CSS3 (Baseline features: CSS Variables, Flexbox, Animations)
-- JavaScript (ES Modules)
-- Formspree (Form Handling)
+## Planned Improvements
+- **Disqus Integration**: A comment section for community interaction and feedback.
 
-## Current Task: Partnership Inquiry Form (Completed)
-
-### Plan
-1.  **HTML Structure**: Add a `section` for the partnership form in `index.html`.
-2.  **Formspree Integration**: Use the endpoint `https://formspree.io/f/mreypqpr`.
-3.  **Modern Styling**: Apply consistent styling in `style.css` for inputs and buttons, supporting both dark and light modes.
-4.  **Validation & Feedback**: Use native HTML5 validation and Formspree's redirect/success handling.
-
-### Steps
-- [x] Refactor `style.css` with theme-aware variables.
-- [x] Add theme toggle button to `index.html`.
-- [x] Add theme switching logic to `main.js`.
-- [x] Add partnership form to `index.html`.
-- [x] Style the partnership form in `style.css`.
-- [x] Verify functionality.
+## Implementation Steps (Current Task)
+1. **HTML Modification**: Insert the Disqus thread container and script after the partnership section.
+2. **CSS Styling**: Ensure the Disqus section matches the app's padding and margins for visual consistency.
+3. **Verification**: Confirm that the Disqus widget loads correctly and respects the container constraints.

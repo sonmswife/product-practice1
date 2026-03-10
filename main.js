@@ -67,6 +67,55 @@ function init() {
         const numbers = generateLottoNumbers();
         renderBalls(numbers);
     });
+
+    // Partnership Form Handling
+    const form = document.getElementById('partnership-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Set loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            submitBtn.textContent = '보내는 중...';
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = '문의가 성공적으로 전송되었습니다. 곧 연락드리겠습니다!';
+                    formStatus.className = 'form-status success';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        formStatus.textContent = data.errors.map(error => error.message).join(", ");
+                    } else {
+                        formStatus.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+                    }
+                    formStatus.className = 'form-status error';
+                }
+            } catch (error) {
+                formStatus.textContent = '서버 통신 중 오류가 발생했습니다.';
+                formStatus.className = 'form-status error';
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                submitBtn.textContent = '문의하기';
+            }
+        });
+    }
 }
 
 // Start the application

@@ -222,10 +222,23 @@ p {
     z-index: 1;
 }
 
-.partnership-section h3 {
+.partnership-section h3, .comments-section h3 {
     font-size: 1.5rem;
     color: var(--text-main);
     text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+#disqus_thread {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 1rem 0;
 }
 
 .partnership-section p {
@@ -277,6 +290,41 @@ input:focus, textarea:focus {
 
 .submit-btn:active {
     transform: translateY(0);
+}
+
+.submit-btn.loading {
+    opacity: 0.7;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.form-status {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-status.success {
+    display: block;
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.form-status.error {
+    display: block;
+    background-color: rgba(233, 69, 96, 0.1);
+    color: var(--text-color);
+    border: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive adjustments */
